@@ -1,7 +1,7 @@
 node {
   def blue_deployment_var = 'shubhi19/capstone-blue'
   def green_deployment_var = 'shubhi19/capstone-green'
-  
+
   stage('SCM CHECKOUT') {
     echo 'Checking out code from Github'
     checkout scm
@@ -38,8 +38,8 @@ node {
     dir('./') {
       withAWS(credentials: 'capestone-user', region: 'us-east-2') {
         sh "aws eks --region us-east-2 update-kubeconfig --name bn-prod"
-        sh "kubectl apply -f blue/blue-controller.json"
-        sh "kubectl apply -f green/green-controller.json"
+        sh "kubectl apply -f blue/blue-replication-controller.json"
+        sh "kubectl apply -f green/green-replication-controller.json"
         sh "kubectl apply -f ./service.json"
         sh "kubectl get nodes"
         sh "kubectl get pods"
