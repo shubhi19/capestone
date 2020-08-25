@@ -1,6 +1,6 @@
 # Fetch latest tagged nginx image
 FROM nginx:1.18-alpine
-
+introducing error
 ## Step 1:
 # Remove indes.html from nginx latest
 RUN rm /usr/share/nginx/html/index.html
