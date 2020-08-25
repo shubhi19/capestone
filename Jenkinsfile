@@ -43,6 +43,7 @@ node {
         sh "kubectl apply -f ./service.json"
         sh "kubectl get nodes"
         sh "kubectl get pods"
+        sh "kubectl get svc"
       }
     }
   }
