@@ -38,7 +38,7 @@ node {
     dir('./') {
       withAWS(credentials: 'capestone-user', region: 'us-east-2') {
         sh "aws eks --region us-east-2 update-kubeconfig --name bn-prod"
-        sh "kubectl apply -f blue/blue-replication-controller.json"
+        sh "kubectl apply -f blue/blue-controller.json"
         sh "kubectl apply -f green/green-replication-controller.json"
         sh "kubectl apply -f ./service.json"
         sh "kubectl get nodes"
