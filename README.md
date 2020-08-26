@@ -1,6 +1,10 @@
 # capestone
 
 ## About
+
+### Problem Statement
+Build a CI/CD pipeline for a microservices application with blue-green deployment strategy. Containerize the application in a Dockerfile and enable typographical linting with a linter. Finally, utilize a cloud formation template to deploy an EKS cluster.
+
 ### Technology stack
 This project is an amalgamation of the following technologies :
 * AWS
